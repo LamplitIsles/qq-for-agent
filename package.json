@@ -1,0 +1,29 @@
+{
+  "name": "qq-for-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "bin": {
+    "qq-for-agent": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "bun build src/cli.ts --target=node --packages=external --outdir=dist",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@tencent-connect/qqbot-connector": "1.2.0",
+    "@tencent-connect/qqbot-nodejs": "1.0.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24",
+    "@types/ws": "^8.18.2",
+    "typescript": "^7.0.2",
+    "ws": "^8.22.0"
+  }
+}
